@@ -1,0 +1,63 @@
+@import "var";
+@import "mixin";
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    @include gradient(top, #007bff, #207cca, #7db9e8);
+}
+
+button:hover {    
+    @include gradient(top, #1e5799, #207cca, #7db9e8);
+}
+
+.logo {
+    background-image: url($imagePath + "logo.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 128px;
+    height: 54px;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.dark-bg {
+    background-color: #2b3137;
+    color: #FFF;
+}
+
+.bg-white {
+    background-color: #FFF;
+    color: #000;
+    @include border-radius(10);
+}
+
+.text-18 {
+    font-size: 18px;
+}
+
+.button-image {
+    &:before {
+        content: "";
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        vertical-align: text-top;
+        background-color: transparent;
+        background-position : center center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+    span {
+        font-size: 15px;
+    }
+}

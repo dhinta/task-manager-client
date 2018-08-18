@@ -1,0 +1,40 @@
+@import "var";
+@import "mixin";
+
+header {
+    button {
+        margin-right: 5px;
+    }
+
+    .settings:before {
+        background-image: url('../../../assets/images/settings.png');
+        flex-grow: 1;
+    }
+
+    .notification:before {
+        background-image: url('../../../assets/images/notification.png');
+        flex-grow: 1;
+    }
+
+    .search:before {
+        background-image: url('../../../assets/images/search.png');
+        flex-grow: 1;
+    }
+
+    .userBtn:before {
+        background-image: url('../../../assets/images/search.png');
+        flex-grow: 1;
+    }
+
+    .searchBox {
+        @include border-radius(10);
+        overflow: visible;
+        line-height: 26px;
+        border: none;
+        width: 250px;
+        padding: 5px 10px;
+        color: #343a40;
+        outline: none;
+        flex-grow: 1;
+    }
+}

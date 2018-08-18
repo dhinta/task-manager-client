@@ -1,0 +1,29 @@
+@mixin border-radius ($val, $unit: $px) {
+    -webkit-border-radius: $val + $unit;
+    -moz-border-radius: $val + $unit;
+    border-radius: $val + $unit;
+}
+
+@mixin box-shadow ($horz:0, $vert: 0) {
+    -webkit-box-shadow: $horz + $px $vert + $px $vert + $px $horz + $px rgba(0,0,0,0.75);
+    -moz-box-shadow: $horz + $px $vert + $px $vert + $px $horz + $px rgba(0,0,0,0.75);
+    box-shadow: $horz + $px $vert + $px $vert + $px $horz + $px rgba(0,0,0,0.75);
+}
+
+@mixin gradient ($pos, $p1, $p2, $p3) {
+    background: $p1; /* Old browsers */
+    background: -moz-linear-gradient($pos, $p1 0%, $p2 47%, $p2 48%, $p3 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient($pos, $p1 0%, $p2 47%, $p2 48%, $p3 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $p1 0%, $p2 47%, $p2 48%, $p3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+@mixin bg-image () {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: text-top;
+    background-color: transparent;
+    background-position : center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

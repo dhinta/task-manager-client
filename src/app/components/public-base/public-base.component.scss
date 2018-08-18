@@ -1,0 +1,15 @@
+.navbar-dark {
+    .navbar-nav {
+        .nav-item {
+            &.active {
+                .nav-link {
+                    border-bottom: 2px solid #FFF;
+                    height: 53px;
+                }
+            }
+            .nav-link {
+                color: #FFF;
+            }
+        }
+    }
+}

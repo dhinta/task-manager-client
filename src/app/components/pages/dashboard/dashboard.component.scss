@@ -1,0 +1,117 @@
+@import "var";
+@import "mixin";
+
+main {
+    padding: 0;
+    margin: 0;
+    color: #343a40;
+
+    .project-header {
+        margin: 10px 0;
+        .title {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+        ul.users {
+            list-style-type: none;
+            display: inline-block;
+            border-right: none;
+            margin-right: 20px;
+            li {
+                border: 1px solid #343a40;
+                padding: 0 5px;
+                @include border-radius(5);
+                &:last-child {
+                    padding: 4px 5px;
+                }
+            }
+        }
+        .add-us {
+            display: inline-block;
+            .add-user-story {
+                &:before {
+                    background-image: url('../../../../assets/images/plus.png');
+                }
+            }
+        }
+        .more {
+            @include bg-image();
+            background-image: url('../../../../assets/images/more.png');
+            cursor: pointer;
+            &:after {
+                content: '';
+                padding: 5px 0;
+            }
+        }
+    }
+
+    .project {
+        .user-stories {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            li.user-story {
+                @include border-radius(10);
+                background-color: $default-bg;
+                width: 300px;
+                display: inline-block;
+                flex-grow: 1;
+                margin: 0 15 + $px;
+                padding: 15 + $px 5 + $px;
+
+                .us-title {
+                    color: #FFF;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    &:after {
+                        @include bg-image();
+                        content: '';
+                        width: 30px;
+                        height: 30px;
+                        background-image: url('../../../../assets/images/edit.png');
+                        float: right;
+                        cursor: pointer;
+                    }
+                    span {
+                        font-size: 1.3rem;
+                    }
+                    input.title {
+                        width: 90%;
+                        border-radius: 10 + $px;
+                        border: none;
+                        padding: 5 + $px;
+                        color: #343a40;
+                    }
+                }
+
+                ul.tasks {
+                    list-style-type: none;
+                    padding: 0;
+                    margin: 0;
+
+                    li.task {
+                        @include border-radius(5);
+                        width: 100%;
+                        margin: 20 + $px 0;
+                        padding: 5 + $px;
+                        min-height: 40 + $px;
+                        cursor: pointer;
+                        &.empty {
+                            color: #b1a2a2;
+                            border: 2 + $px dotted #FFF;                            
+                        }
+                        &:not(.empty) {
+                            @include box-shadow(0, 5);
+                            background-color: #ece3e3;
+                            color: #343a40;
+                            padding-top: 8 + $px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
