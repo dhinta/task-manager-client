@@ -9,6 +9,7 @@ import { PrivateBaseComponent } from './components/private-base/private-base.com
 import { HomeComponent } from './components/pages/home/home.component';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,10 @@ import { DashboardComponent } from './components/pages/dashboard/dashboard.compo
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    //Custom Module
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
