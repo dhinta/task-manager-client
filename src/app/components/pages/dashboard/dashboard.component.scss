@@ -32,13 +32,13 @@ main {
             display: inline-block;
             .add-user-story {
                 &:before {
-                    background-image: url('../../../../assets/images/plus.png');
+                    background-image: url($imagePath + 'plus.png');
                 }
             }
         }
         .more {
             @include bg-image();
-            background-image: url('../../../../assets/images/more.png');
+            background-image: url($imagePath + 'more.png');
             cursor: pointer;
             &:after {
                 content: '';
@@ -71,7 +71,7 @@ main {
                         content: '';
                         width: 30px;
                         height: 30px;
-                        background-image: url('../../../../assets/images/edit.png');
+                        background-image: url($imagePath + 'edit.png');
                         float: right;
                         cursor: pointer;
                     }

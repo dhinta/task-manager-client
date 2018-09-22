@@ -7,22 +7,22 @@ header {
     }
 
     .settings:before {
-        background-image: url('../../../assets/images/settings.png');
+        background-image: url($imagePath + 'settings.png');
         flex-grow: 1;
     }
 
     .notification:before {
-        background-image: url('../../../assets/images/notification.png');
+        background-image: url($imagePath + 'notification.png');
         flex-grow: 1;
     }
 
     .search:before {
-        background-image: url('../../../assets/images/search.png');
+        background-image: url($imagePath + 'search.png');
         flex-grow: 1;
     }
 
     .userBtn:before {
-        background-image: url('../../../assets/images/search.png');
+        background-image: url($imagePath + 'search.png');
         flex-grow: 1;
     }
 
