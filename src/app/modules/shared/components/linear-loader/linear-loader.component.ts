@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { LoaderService } from "../../services/loader.service";
 
 @Component({
-  selector: 'tm-linear-loader',
-  templateUrl: './linear-loader.component.html',
-  styleUrls: ['./linear-loader.component.scss']
+  selector: "tm-linear-loader",
+  templateUrl: "./linear-loader.component.html",
+  styleUrls: ["./linear-loader.component.scss"]
 })
 export class LinearLoaderComponent implements OnInit {
 
-  constructor() { }
+  public canShow: boolean;
 
-  ngOnInit() {
+  constructor(private loaderService: LoaderService) {
   }
 
+  ngOnInit() {
+    console.log('loader oninit')
+    this.loaderService.get().subscribe(response => {
+      console.log('From Loader: ', response);
+      this.canShow = response.show;
+    });
+  }
 }
