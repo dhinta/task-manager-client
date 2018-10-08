@@ -14,9 +14,7 @@ export class LinearLoaderComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log('loader oninit')
     this.loaderService.get().subscribe(response => {
-      console.log('From Loader: ', response);
       this.canShow = response.show;
     });
   }

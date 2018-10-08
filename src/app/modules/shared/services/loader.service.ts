@@ -11,8 +11,7 @@ export class LoaderService {
   private invokeCount: number;
   private loader: iLoader;
 
-  constructor() { 
-    console.log("1")
+  constructor() {
     this.invokeCount = 0;
     this.loaderSubject = new Subject();
     this.loader = {
@@ -21,17 +20,14 @@ export class LoaderService {
   }
 
   public get (): Observable<iLoader> {
-    console.log("2")
     return this.loaderSubject.asObservable();
   }
 
   public invoked (canShow: boolean): void {
     canShow ? this.invokeCount++ : this.invokeCount--;
-    console.log("3", this.invokeCount)
   }
 
   public next (): void {
-    console.log("4")
     if(this.invokeCount === 0) {
       this.loader.show = false;
     } else {
@@ -40,7 +36,6 @@ export class LoaderService {
   }
 
   public set (canShow: boolean): void {
-    console.log("5")
     this.invoked(canShow);
     this.next();
     this.loaderSubject.next(this.loader);

@@ -1,0 +1,10 @@
+<div id="openModal" class="modalbg" #modalWrapper>
+  <div class="dialog" [ngStyle]="{'width': modalConfig.modalWidth + 'px'}">
+    <a href="javascript:void(0)" title="Close" class="close" (click)="destroy()" *ngIf="modalConfig.hasCloseBtn">X</a>
+		<h3 [innerHTML]="modalConfig.modalTitle" class="modalTitle"></h3>
+		<hr />
+		<!-- <p>You freakin' did it!</p>
+		<p>You opened up the freakin' modal window! Now close it, ya dingus.</p> -->
+		<ng-template #modalBody></ng-template>
+	</div>
+</div>

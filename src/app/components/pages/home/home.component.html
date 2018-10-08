@@ -6,30 +6,14 @@
         <div class="text-left text-18">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
           text ever since the 1500s. It has survived not only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged
+          remaining essentially unchanged. <a href="javascript:void(0)" class="dialog" [tmModal]="modalConfiguration">Click to see more</a>
         </div>
       </div>
       <div class="col-sm col-12 mt-3">
         <div class="form-wrapper bg-white">
-          <form>
-            <div class="form-group">
-              <label for="email">Email address</label>
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-              <label for="password">Password</label>
-              <input type="password" class="form-control" id="password" placeholder="Password">
-            </div>
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="staySigned">
-              <label class="form-check-label" for="staySigned">Stay sign in</label>
-
-              <small id="emailHelp" class="form-text text-muted float-right">
-                <a href="#">Forgot email/password?</a>
-              </small>
-            </div>
-            <button type="submit" class="btn btn-dark btn-lg">Sign In</button>
-          </form>
+          <tm-login *ngIf="accessBoxState === 'login'" (stateChange)="changeAccessBoxState($event)"></tm-login>
+          <tm-retrieve-credentials *ngIf="accessBoxState === 'retrieveCreds'" (stateChange)="changeAccessBoxState($event)"></tm-retrieve-credentials>
+          <tm-registration *ngIf="accessBoxState === 'registration'" (stateChange)="changeAccessBoxState($event)"></tm-registration>
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 import { Routes } from "@angular/router";
 
-import { PublicBaseComponent } from "./components/public-base/public-base.component";
-import { PrivateBaseComponent } from "./components/private-base/private-base.component";
+import { PublicBaseComponent } from "./components/layouts/public-base/public-base.component";
+import { PrivateBaseComponent } from "./components/layouts/private-base/private-base.component";
 import { HomeComponent } from "./components/pages/home/home.component";
 import { DashboardComponent } from "./components/pages/dashboard/dashboard.component";
+import { ValidationRulesResolverService } from "./modules/shared/services/validation-rules-resolver.service";
+import { SiteDownComponent } from "./components/pages/site-down/site-down.component";
 
 export const appRoutes: Routes = [
   {
@@ -12,7 +14,14 @@ export const appRoutes: Routes = [
     children: [
       {
         path: "",
-        component: HomeComponent
+        component: HomeComponent,
+        resolve: {
+          validationRules: ValidationRulesResolverService
+        }
+      },
+      {
+        path: "site-down",
+        component: SiteDownComponent
       }
     ]
   },
