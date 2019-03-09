@@ -1,19 +1,40 @@
 <form [formGroup]="loginForm" (submit)="onSubmit()">
+  <tm-error-message [errMessage]="commonErrorMsg"></tm-error-message>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Enter email" formControlName="email">
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      placeholder="Enter email"
+      formControlName="email"
+    />
+    <tm-error-message [control]="loginForm.get('email')"></tm-error-message>
+
   </div>
   <div class="form-group">
     <label for="password">Password</label>
-    <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+    <tm-error-message [control]="loginForm.get('password')"></tm-error-message>
   </div>
   <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="staySigned">
+    <input type="checkbox" class="form-check-input" id="staySigned" />
     <label class="form-check-label" for="staySigned">Stay sign in</label>
 
     <small class="form-text text-muted float-right">
       <a href="javascript: void(0);" (click)="setRetrieve()">Forgot email/password?</a>
     </small>
+
+    <small class="form-text text-muted float-right mr-2">
+      <a href="javascript: void(0);" (click)="setRegister()">Sign-up</a>
+    </small>
+
   </div>
-  <button type="submit" class="btn btn-dark btn-lg">Sign In</button>
+  <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
 </form>

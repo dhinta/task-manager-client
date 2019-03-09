@@ -1,3 +1,10 @@
 export const environment = {
-  production: true
+  production: true,
+  URLs: {
+    APIEndPoint: '/api/'
+  },
+  DebugLevel: {
+    Client: 'OFF',
+    Server: 'ERROR'
+  }
 };

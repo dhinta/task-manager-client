@@ -5,7 +5,11 @@
 export const environment = {
   production: false,
   URLs: {
-    APIEndPoint: 'http://localhost:8080/'
+    APIEndPoint: 'https://localhost:8080/api/'
+  },
+  DebugLevel: {
+    Client: 'DEBUG',
+    Server: 'ERROR'
   }
 };
 

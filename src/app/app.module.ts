@@ -35,7 +35,7 @@ import { SiteDescriptionModalComponent } from './components/site-description-mod
     RouterModule.forRoot(appRoutes),
     ReactiveFormsModule,
 
-    //Custom Module
+    // Custom Module
     SharedModule
   ],
   providers: [],

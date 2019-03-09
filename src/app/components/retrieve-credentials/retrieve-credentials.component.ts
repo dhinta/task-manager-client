@@ -1,18 +1,18 @@
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
-import { FormGroup, FormBuilder } from "@angular/forms";
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
-  selector: "tm-retrieve-credentials",
-  templateUrl: "./retrieve-credentials.component.html",
-  styleUrls: ["./retrieve-credentials.component.scss"]
+  selector: 'tm-retrieve-credentials',
+  templateUrl: './retrieve-credentials.component.html',
+  styleUrls: ['./retrieve-credentials.component.scss']
 })
 export class RetrieveCredentialsComponent implements OnInit {
-  
+
   public retrieveForm: FormGroup;
 
   @Output() stateChange: EventEmitter<string>;
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder) {
     this.stateChange = new EventEmitter();
   }
 

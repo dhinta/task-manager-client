@@ -1,0 +1,98 @@
+.wrapper-dropdown {
+  position: relative;
+  margin: 0 auto;
+  border: 1px solid silver;
+  cursor: pointer;
+  -webkit-user-select: none; /* Safari 3.1+ */
+  -moz-user-select: none; /* Firefox 2+ */
+  -ms-user-select: none; /* IE 10+ */
+  user-select: none; /* Standard syntax */
+
+  &::before {
+    content: "";
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 15px;
+    border: 1px solid #ffaa9f;
+    border-top: none;
+    border-bottom: none;
+    z-index: 2;
+  }
+
+  .selection-wrapper {
+    .selected {
+      padding: 10px 30px;
+      display: inline-block;
+    }
+  
+    .dd-icon {
+      width: 0;
+      height: 0;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      margin-top: -3px;
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #ffaa9f transparent;
+    }
+  }
+
+  .dropdown-container {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-top: 1px solid silver;
+    .dropdown {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      border: 1px solid silver;
+      border-top: none;
+      padding: 0;
+      background: white;
+      list-style: none;
+      overflow: hidden;
+      margin-bottom: 0;
+      &::before {
+        content: "";
+        width: 4px;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 14px;
+        border: 1px solid #ffaa9f;
+        border-bottom: none;
+        z-index: 2;
+      }
+      li {
+        position: relative;
+        input {
+          position: absolute;
+          display: block;
+          right: 10px;
+          top: 50%;
+          margin-top: -8px;
+        }
+        label {
+          display: block;
+          padding: 10px 10px 10px 25px;
+          border-bottom: 1px dotted #1ccfcf;
+          cursor: pointer;
+        }
+        &:last-child {
+            label {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+        }
+      }
+    }
+  }
+}

@@ -7,10 +7,10 @@ import { SiteDescriptionModalComponent } from './../../../components/site-descri
 export class DynamicLoaderService {
 
   private components: object;
-  constructor() { 
+  constructor() {
     this.components = {
       siteDescriptionModal: SiteDescriptionModalComponent
-    }
+    };
   }
 
   public get (key: string): any {

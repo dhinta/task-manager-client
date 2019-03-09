@@ -1,0 +1,19 @@
+<div id="dd" class="wrapper-dropdown">
+  <div class="selection-wrapper" (click)="toggle()">
+    <span class="selected">{{selectedItem.text}}</span>
+    <span class="dd-icon"></span>
+  </div>
+  <div class="dropdown-container" [ngClass]="{'d-none': !toggleDropDown}">
+    <ul class="dropdown">
+      <li *ngFor="let item of data">
+        <input type="checkbox" id="el-1" name="el-1" [value]="item.id" *ngIf="multi">
+        <label for="el-1" (click)="select(item)">{{item.text}}</label>
+      </li>        
+    </ul>
+  </div>  
+</div>
+<div class="d-none" [formGroup]="formGroupInstance">
+  <select formControlName="{{controlName}}" (change)="onChange()">
+    <option *ngFor="let item of data" [value]="item.id">{{item.text}}</option>
+  </select>
+</div>

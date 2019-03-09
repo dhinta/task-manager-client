@@ -1,5 +1,15 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, Output, EventEmitter, Input, ViewContainerRef, ComponentFactoryResolver } from '@angular/core';
-import { iModalConfig } from './../../models/common';
+import {
+  Component,
+  AfterViewInit,
+  ViewChild,
+  ElementRef,
+  Output,
+  EventEmitter,
+  Input,
+  ViewContainerRef,
+  ComponentFactoryResolver
+} from '@angular/core';
+import { ModalConfig } from './../../models/common';
 import { DynamicLoaderService } from '../../services/dynamic-loaders.service';
 
 @Component({
@@ -8,15 +18,18 @@ import { DynamicLoaderService } from '../../services/dynamic-loaders.service';
   styleUrls: ['./modal-container.component.scss']
 })
 export class ModalContainerComponent implements AfterViewInit {
-
-  @Input() modalConfig: iModalConfig;
+  @Input() modalConfig: ModalConfig;
 
   @Output() closeModal: EventEmitter<boolean>;
 
   @ViewChild('modalWrapper') modalWrapper: ElementRef;
-  @ViewChild('modalBody', {read: ViewContainerRef}) modalBody: ViewContainerRef;
+  @ViewChild('modalBody', { read: ViewContainerRef })
+  modalBody: ViewContainerRef;
 
-  constructor(private dynamicLoadedSrv: DynamicLoaderService, private componentFactoryResolver: ComponentFactoryResolver) { 
+  constructor(
+    private dynamicLoadedSrv: DynamicLoaderService,
+    private componentFactoryResolver: ComponentFactoryResolver
+  ) {
     this.closeModal = new EventEmitter();
   }
 
@@ -24,18 +37,22 @@ export class ModalContainerComponent implements AfterViewInit {
     this.init();
   }
 
-  public init (): void {
-    let modalComponent: any = this.dynamicLoadedSrv.get(this.modalConfig.cmpName),
-        componentFactory: any = this.componentFactoryResolver.resolveComponentFactory(modalComponent);
+  public init(): void {
+    const modalComponent: any = this.dynamicLoadedSrv.get(
+        this.modalConfig.cmpName
+      ),
+      componentFactory: any = this.componentFactoryResolver.resolveComponentFactory(
+        modalComponent
+      );
+    // TODO: Remove any
 
     this.modalBody.clear();
-    let componentRef = this.modalBody.createComponent(componentFactory);
+    const componentRef = this.modalBody.createComponent(componentFactory);
 
-    setTimeout(() => this.modalWrapper.nativeElement.classList.add("open"), 0);
+    setTimeout(() => this.modalWrapper.nativeElement.classList.add('open'), 0);
   }
 
-  public destroy (): void {
+  public destroy(): void {
     this.closeModal.emit(true);
   }
-
 }

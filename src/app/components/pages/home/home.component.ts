@@ -1,21 +1,21 @@
-import { Component, OnInit } from "@angular/core";
-import { iModalConfig } from "../../../modules/shared/models/common";
+import { Component, OnInit } from '@angular/core';
+import { ModalConfig } from '../../../modules/shared/models/common';
 
 @Component({
-  selector: "tm-home",
-  templateUrl: "./home.component.html",
-  styleUrls: ["./home.component.scss"]
+  selector: 'tm-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
   public accessBoxState: string;
-  public modalConfiguration: iModalConfig;
+  public modalConfiguration: ModalConfig;
 
   constructor() {
-    this.accessBoxState = "login";
+    this.accessBoxState = 'login';
     this.modalConfiguration = {
-      cmpName: "siteDescriptionModal",
+      cmpName: 'siteDescriptionModal',
       modalWidth: 600,
-      modalTitle: "What We Do",
+      modalTitle: 'What We Do',
       hasCloseBtn: true
     };
   }

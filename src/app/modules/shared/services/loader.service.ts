@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
-import { iLoader } from './../models/common';
+import { Loader } from './../models/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoaderService {
 
-  private loaderSubject: Subject<iLoader>;
+  private loaderSubject: Subject<Loader>;
   private invokeCount: number;
-  private loader: iLoader;
+  private loader: Loader;
 
   constructor() {
     this.invokeCount = 0;
@@ -19,7 +19,7 @@ export class LoaderService {
     };
   }
 
-  public get (): Observable<iLoader> {
+  public get (): Observable<Loader> {
     return this.loaderSubject.asObservable();
   }
 
@@ -28,7 +28,7 @@ export class LoaderService {
   }
 
   public next (): void {
-    if(this.invokeCount === 0) {
+    if (this.invokeCount === 0) {
       this.loader.show = false;
     } else {
       this.loader.show = true;

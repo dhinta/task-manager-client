@@ -1,16 +1,17 @@
 {
     "extends": "../tslint.json",
     "rules": {
+        "no-input-rename": false,
         "directive-selector": [
             true,
             "attribute",
-            "app",
+            "tm",
             "camelCase"
         ],
         "component-selector": [
             true,
             "element",
-            "app",
+            "tm",
             "kebab-case"
         ]
     }

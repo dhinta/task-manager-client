@@ -1,0 +1,17 @@
+<div
+  class="alert" [ngClass]="{'alert-danger': control.errors.error, 'alert-success': !control.errors.error}"
+  *ngIf="(errMessage === '') && control && control.errors && control.dirty && control.errors.message">
+  {{ control.errors.message }}
+</div>
+
+<div
+  class="alert" [ngClass]="{'alert-danger': control.errors.error, 'alert-success': !control.errors.error}"
+  *ngIf="(errMessage === '') && group && group.errors && group.dirty && group.errors.message">
+  {{ group.errors.message }}
+</div>
+
+<div
+  class="alert" [ngClass]="{'alert-danger': errMessage.error, 'alert-success': !errMessage.error}"
+  *ngIf="errMessage">
+  {{ errMessage.message }}
+</div>
