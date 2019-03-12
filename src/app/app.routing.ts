@@ -46,7 +46,8 @@ export const appRoutes: Routes = [
       },
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        loadChildren: './modules/dashboard/dashboard.module#DashboardModule'
       }
     ]
   },

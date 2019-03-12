@@ -1,0 +1,8 @@
+<section class="lists-container" 
+  *ngIf="projects.length > 0 && projects[activeProjectIndex].stories">
+  <tm-story
+    *ngFor="let story of projects[activeProjectIndex].stories"
+    [story]="story"></tm-story>
+
+  <button class="add-list-btn btn">Add a list</button>
+</section>

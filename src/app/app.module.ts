@@ -16,6 +16,7 @@ import { RetrieveCredentialsComponent } from './components/retrieve-credentials/
 import { RegistrationComponent } from './components/registration/registration.component';
 import { SiteDownComponent } from './components/pages/site-down/site-down.component';
 import { SiteDescriptionModalComponent } from './components/site-description-modal/site-description-modal.component';
+import { DashboardModule } from './modules/dashboard/dashboard.module';
 
 @NgModule({
   declarations: [

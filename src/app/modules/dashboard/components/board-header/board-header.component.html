@@ -1,0 +1,19 @@
+<section class="board-info-bar" *ngIf="projects">
+  <div class="board-controls">
+    <button
+      class="board-title butn"
+      *ngFor="let project of projects; let indx = index"
+      (click)="switchProject(indx)"
+    >
+      <h2>{{ project.title }}</h2>
+    </button>
+    <!-- <button class="star-btn butn" aria-label="Star Board">
+			<i class="far fa-star" aria-hidden="true"></i>
+		</button>
+		<button class="personal-btn butn">Personal</button> 
+		<button class="private-btn butn"><i class="fas fa-briefcase private-btn-icon" aria-hidden="true"></i>Private</button>-->
+  </div>
+  <button class="menu-btn butn">
+    <i class="fas fa-ellipsis-h menu-btn-icon" aria-hidden="true"></i>Show Menu
+  </button>
+</section>

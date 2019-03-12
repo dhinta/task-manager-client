@@ -1,7 +1,7 @@
 import { UserService } from 'src/app/services/user.service';
 import { SessionService } from './../../../modules/shared/services/storage/session.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NGXLogger } from 'ngx-logger';
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -14,13 +14,11 @@ import { of } from 'rxjs';
 export class PrivateBaseComponent implements OnInit {
 
   constructor(
-    private activatedRoute: ActivatedRoute,
     private router: Router,
     private logger: NGXLogger,
     private sessionService: SessionService,
     private userService: UserService
   ) {
-    this.activatedRoute.data.subscribe(res => console.log(res), err => console.log(err));
   }
 
   ngOnInit() {

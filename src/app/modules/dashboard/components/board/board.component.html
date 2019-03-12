@@ -1,0 +1,6 @@
+<tm-board-header 
+  [projects]="dashboardData"
+  (projectIndexChange)="onProjectIndexUpdate($event)"></tm-board-header>
+<tm-board-body
+  [projects]="dashboardData"
+  [activeProjectIndex]="activeProjectIndex"></tm-board-body>

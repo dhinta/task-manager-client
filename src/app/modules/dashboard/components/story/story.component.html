@@ -1,0 +1,9 @@
+<div class="list">
+  <h3 class="list-title">{{story.title}}</h3>
+
+  <div class="list-items">
+    <tm-task *ngFor="let task of story.tasks" [task]="task"></tm-task>
+  </div>
+
+  <button class="add-card-btn btn" (click)="addCard()">Add a card</button>
+</div>
