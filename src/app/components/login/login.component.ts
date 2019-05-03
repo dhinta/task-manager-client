@@ -72,7 +72,7 @@ export class LoginComponent implements OnInit {
         this.sessionService.set('loggedIn', true);
         this.router.navigate(['project/dashboard']);
       } else {
-        this.commonErrorMsg = this.validationMessages.authorizationMessages[res.data.messages];
+        this.commonErrorMsg = this.validationMessages.authorizationMessages[res.data.messages[0]];
       }
     } catch (e) {
       this.logger.error('LoginComponent::onLoginResponse', e.message, e.stack);

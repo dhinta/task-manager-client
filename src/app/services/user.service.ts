@@ -29,6 +29,6 @@ export class UserService {
       email: email,
       password: password
     };
-    return this.httpService.post(environment.URLs.APIEndPoint + 'login', data);
+    return this.httpService.post(environment.URLs.APIEndPoint + 'user/login', data);
   }
 }

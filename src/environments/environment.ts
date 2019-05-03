@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   URLs: {
-    APIEndPoint: 'https://localhost:8080/api/'
+    APIEndPoint: 'https://localhost:3000/'
   },
   DebugLevel: {
     Client: 'DEBUG',
