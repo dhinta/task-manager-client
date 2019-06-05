@@ -12,6 +12,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Starts..'
+                bat 'make check || false'
+                bat 'npm run test'
                 echo 'Testing Ends..'
             }
         }
