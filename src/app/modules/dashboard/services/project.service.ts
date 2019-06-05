@@ -15,6 +15,6 @@ export class ProjectService {
   constructor(private httpService: HttpService) { }
 
   getDashboardData (): Observable<Response> {
-    return this.httpService.get( environment.URLs.APIEndPoint + 'dashboard' );
+    return this.httpService.get( environment.URLs.APIEndPoint + 'project/dashboard' );
   }
 }

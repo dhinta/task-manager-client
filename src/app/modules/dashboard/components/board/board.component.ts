@@ -1,7 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-
-import { Response } from '../../../../modules/shared/models/common';
 import { ProjectInfo } from '../../models/project-info';
 
 @Component({

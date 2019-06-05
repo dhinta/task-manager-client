@@ -1,0 +1,7 @@
+<ng-container *ngIf="label">
+  <label for="{{labelFor}}" [innerHTML]=label></label>
+  <div class="fieldWrapper">
+    <i class="fa" [ngClass]="faIcon" *ngIf="faIcon"></i>
+    <ng-content></ng-content>
+  </div>
+</ng-container>

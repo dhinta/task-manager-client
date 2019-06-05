@@ -20,7 +20,7 @@ export class UserService {
 
   signout (): Observable<Response> {
     this.logger.debug('UserService::signout', 'Signing Out');
-    return this.httpService.get(environment.URLs.APIEndPoint + 'signout');
+    return this.httpService.get(environment.URLs.APIEndPoint + 'user/signout');
   }
 
   validateCredentials (email: string, password: string): Observable<Response> {

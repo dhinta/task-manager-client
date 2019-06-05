@@ -18,6 +18,7 @@ import { ErrorHandlerInterceptorService } from './services/error-handler-interce
 import { environment } from 'src/environments/environment';
 import { ErrorHandlerService } from './services/error-handler.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { FormFieldWrapperComponent } from './components/form-field-wrapper/form-field-wrapper.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     FormsModule,
     ReactiveFormsModule,
     LoggerModule.forRoot({
-      serverLoggingUrl: environment.URLs.APIEndPoint + '/logs',
+      serverLoggingUrl: environment.URLs.APIEndPoint + 'logs',
       level: NgxLoggerLevel[environment.DebugLevel.Client],
       serverLogLevel: NgxLoggerLevel[environment.DebugLevel.Server]
     }),
@@ -36,14 +37,16 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ModalDirective,
     ModalContainerComponent,
     ErrorMessageComponent,
-    DropdownComponent
+    DropdownComponent,
+    FormFieldWrapperComponent
   ],
   exports: [
     LinearLoaderComponent,
     ModalDirective,
     ModalContainerComponent,
     ErrorMessageComponent,
-    DropdownComponent
+    DropdownComponent,
+    FormFieldWrapperComponent
   ],
   entryComponents: [ModalContainerComponent],
   providers: [

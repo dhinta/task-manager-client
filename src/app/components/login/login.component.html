@@ -1,26 +1,28 @@
 <form [formGroup]="loginForm" (submit)="onSubmit()">
   <tm-error-message [errMessage]="commonErrorMsg"></tm-error-message>
   <div class="form-group">
-    <label for="email">Email address</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      placeholder="Enter email"
-      formControlName="email"
-    />
+    <tm-form-field-wrapper [labelFor]="'email'" [label]="'Email address'" [fa-icon]="'fa-envelope'">
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        placeholder="Enter email"
+        formControlName="email"
+      />
+    </tm-form-field-wrapper>
     <tm-error-message [control]="loginForm.get('email')"></tm-error-message>
 
   </div>
   <div class="form-group">
-    <label for="password">Password</label>
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      placeholder="Password"
-      formControlName="password"
-    />
+    <tm-form-field-wrapper [labelFor]="'password'" [label]="'Password'" [fa-icon]="'fa-key'">
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        placeholder="Password"
+        formControlName="password"
+      />
+    </tm-form-field-wrapper>
     <tm-error-message [control]="loginForm.get('password')"></tm-error-message>
   </div>
   <div class="form-group form-check">
