@@ -5,15 +5,15 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Starts..'
-                bat 'npm install'
+                sh 'npm install'
                 echo 'Building Ends..'
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing Starts..'
-                bat 'make check || false'
-                bat 'npm run test'
+                sh 'make check || false'
+                sh 'npm run test'
                 echo 'Testing Ends..'
             }
         }
