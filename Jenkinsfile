@@ -12,7 +12,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing Starts..'
-                sh 'make check || false'
+                // sh 'make check || false'
                 sh 'npm run test'
                 echo 'Testing Ends..'
             }
