@@ -11,13 +11,11 @@ pipeline {
         }
         stage('Test') {
             steps {
-                withEnv(['PATH+EXTRA=/usr/sbin:/usr/bin:/sbin:/bin']) {
-                    echo PATH;
-                    echo 'Testing Starts..'
-                    sh 'make check || false'
-                    sh 'npm run test'
-                    echo 'Testing Ends..'
-                }
+                echo PATH;
+                echo 'Testing Starts..'
+                sh 'make check || false'
+                sh 'npm run test'
+                echo 'Testing Ends..'
             }
         }
         stage('Deploy') {
