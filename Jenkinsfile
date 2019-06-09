@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo PATH;
                 echo 'Testing Starts..'
-                sh 'make check || false'
+                sh 'C:\MinGW\bin\make check || false'
                 sh 'npm run test'
                 echo 'Testing Ends..'
             }
