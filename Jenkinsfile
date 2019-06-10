@@ -2,26 +2,26 @@ pipeline {
     agent any
 
     stages {
-        stage('****************Load Dependencies****************') {
+        stage('Load Dependencies') {
             steps {
                 echo 'Building Starts..'
                 sh 'npm install'
                 echo 'Building Ends..'
             }
         }
-        stage('****************Code Quality****************') {
+        stage('Code Quality') {
             steps {
                 echo 'Testing Starts..'
                 sh 'npm run test'
                 echo 'Testing Ends..'
             }
         }
-        stage('****************Build****************') {
+        stage('Build') {
             steps {
                 echo 'do build'
             }
         }
-        stage('****************Deploy****************') {
+        stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
