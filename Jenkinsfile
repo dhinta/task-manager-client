@@ -12,7 +12,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 echo 'Testing Starts..'
-                bat 'npm run test'
+                bat 'npm run citest'
                 echo 'Testing Ends..'
             }
         }
