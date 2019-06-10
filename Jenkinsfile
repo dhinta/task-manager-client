@@ -2,23 +2,24 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('****************Load Dependencies****************') {
             steps {
                 echo 'Building Starts..'
                 sh 'npm install'
                 echo 'Building Ends..'
             }
         }
-        stage('Test') {
+        stage('****************Code Quality****************') {
             steps {
-                echo PATH;
                 echo 'Testing Starts..'
-                sh 'C:/MinGW/bin/make check || false'
                 sh 'npm run test'
                 echo 'Testing Ends..'
             }
         }
-        stage('Deploy') {
+        stage('****************Build****************') {
+            echo 'do build'
+        }
+        stage('****************Deploy****************') {
             steps {
                 echo 'Deploying....'
             }
