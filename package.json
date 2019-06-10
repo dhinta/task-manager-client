@@ -6,6 +6,7 @@
     "start": "npm run lint && ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
+    "citest": "ng test --single-run",
     "coverage": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e"

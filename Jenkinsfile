@@ -12,11 +12,7 @@ pipeline {
         stage('Code Quality') {
             steps {
                 echo 'Testing Starts..'
-                try {
-                    bat 'npm run test'
-                } catch (err) {
-                    throw err;
-                }
+                bat 'npm run test'
                 echo 'Testing Ends..'
             }
         }
