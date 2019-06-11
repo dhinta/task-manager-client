@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.logger.debug('LoginComponent::ngOnInit');
+    this.logger.debug('LoginComponent::ngOnInit')
     this.loginForm = this.formBuilder.group({
       email: [
         '',
